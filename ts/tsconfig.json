@@ -1,0 +1,10 @@
+{
+    "compilerOptions": {
+      "outDir": "../src",
+      "target": "es2021",
+      "module": "es2015",
+      "moduleResolution": "node",
+      "watch": true,
+      "strictNullChecks" :true
+    }
+  }

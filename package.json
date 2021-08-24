@@ -1,0 +1,45 @@
+{
+  "name": "hello-layer",
+  "version": "0.1.0",
+  "description": "",
+  "sideEffects": false,
+  "scripts": {
+    "start": "zem start",
+    "build": "zem build",
+    "clean": "zem clean",
+    "exec": "zem exec",
+    "test": "zem test",
+    "publish": "zem publish"
+  },
+  "zeplin": {
+    "displayName": "My Extension",
+    "platforms": [
+      "android"
+    ],
+    "options": [
+      {
+        "name": "Text style line height attribute",
+        "type": "picker",
+        "id": "lineHeightAttribute",
+        "default": "lineHeight",
+        "options": [
+          {
+            "name": "lineHeight",
+            "value": "lineHeight"
+          },
+          {
+            "name": "lineSpacingExtra",
+            "value": "lineSpacingExtra"
+          },
+          {
+            "name": "lineSpacingMultiplier",
+            "value": "lineSpacingMultiplier"
+          }
+        ]
+      }
+    ]
+  },
+  "dependencies": {
+    "zem": "^1.3.0"
+  }
+}
