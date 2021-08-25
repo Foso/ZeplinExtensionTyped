@@ -1,5 +1,5 @@
 # Hello Layer
-
+tsc --project tsconfig.json
 <!--- Sample description --->
 
 ## Getting started

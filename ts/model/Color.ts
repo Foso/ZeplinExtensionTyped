@@ -1,39 +1,39 @@
-export default class Color {
+import HexColor from "./HexColor"
 
-     name: String
+export default interface Color {
+
+     name: string
 
     /**
      * Name of the color, only exists on project colors
      */
-     originalName: String | null
+     originalName: string | null
 
     /**
      * Id of the color in the source design document.
      */
-     sourceId: String
+     sourceId: string
 
     /**
      * Red component of the color, [0, 255].
      */
-     r: Double
+     r: number
 
     /**
      * Green component of the color, [0, 255].
      */
-     g: Double
+     g: number
 
     /**
      * Blue component of the color, [0, 255].
      */
-     b: Double
+     b: number
 
     /**
      * Alpha component of the color, [0, 1].
      */
-     a: Double
+     a: number
 
-
+     toHex() : HexColor
     
 }
-
-type Double = number
