@@ -7,4 +7,6 @@ export default class Fill {
     gradient: Gradient | null
     opacity: number
     fill: number
+
+    
 }
