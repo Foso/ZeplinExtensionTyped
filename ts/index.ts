@@ -15,7 +15,133 @@ import Gradient from "./model/Gradient"
 import ColorStop from "./model/ColorStop"
 import Layout from "./model/Layout"
 import Project from "./model/Project"
+import TextStyle from "./model/TextStyle"
+import TextStyleObject from "./model/TextStyleObject"
 
+function showit(context: Context, layer: Layer): string {
+  let height = layer.rect.height
+  let width = layer.rect.width
+  switch (layer.type) {
+    case "text": {
+      let project = context.project!
+
+      const textStyle = layer.textStyles[0].textStyle
+
+      var textStyleName = project.findTextStyleEqual(layer.textStyles[0].textStyle)?.name.replaceAll("/", "").replaceAll(" ", "")
+    
+      var colorValue: string = "LEER"
+      if (textStyle != null) {
+        let findColor = project.findColorEqual(textStyle.color)
+    
+        if (findColor != null) {
+          colorValue = findColor.name.replaceAll("-", "_")
+        } else {
+          let hex = layer.textStyles[0].textStyle.color.toHex()
+          colorValue = "0xFF" + hex.r + hex.g + hex.b
+        }
+      } else {
+        colorValue = layer.textStyles[0].textStyle.color.toHex().toString()
+      }
+    
+      var styleValue = `fun ${textStyleName}() = TextStyle(
+              fontFamily = FontFamily(${textStyle?.fontFace}),
+              lineHeight = ${textStyle?.lineHeight}.sp,
+              fontSize = ${textStyle?.fontSize}.sp,
+              letterSpacing = ${layer.textStyles[0].textStyle?.letterSpacing}.sp,
+              color = Color(${colorValue}))\n\n`
+
+
+
+
+      var textValue = `Text(\"${layer.content}\",style = ${textStyleName}())`
+
+
+
+      if (layer.parent.type == "group" && layer.parent.name == "but_primary") {
+        return "PrimaryButton(onClick={}){" + textValue + "}" + "\n\n"
+      } else if (layer.parent.type == "group" && layer.parent.name == "But_secondary_small_white") {
+        return "PrimaryTinyButton(" + textValue + ")" + "\n\n"
+      } else if (layer.parent.type == "group" && layer.parent.name == "but_secondary") {
+        return "SecButton(" + textValue + ")" + "\n\n"
+      }
+      else {
+        return textValue + "\n\n"
+      }
+
+      return ""
+
+    }
+    case "shape": {
+
+
+      switch (layer.name) {
+        case "Rectangle": {
+          let shapeCode = `Box(modifier = Modifier 
+        .height(${height}.dp) 
+        .width(${width}.dp) 
+        .background()) {}`
+          return layer.name + " " + shapeCode + "\n"
+        }
+
+        default:
+          return ""
+      }
+
+
+
+    }
+    case "group": {
+
+      if (isComponent(layer)) {
+
+        return `Icon(R.drawable.${iconName(layer.name)},modifier = Modifier 
+        .height(${height}.dp) 
+        .width(${width}.dp) )\n\n`
+      }
+
+      return layer.type + " " + layer.name + "a\n"
+    }
+  }
+  return ""
+}
+
+
+function show(context: Context, num: number, layer: Layer): string {
+
+  var ident = ee(num)
+
+  if (layer.layers.length == 0) {
+    return ident + showit(context, layer)
+  }
+  else {
+
+    switch (layer.type) {
+      case "shape": {
+        let tt = layer.layers.map((layer) => {
+          return show(context, 0, layer)
+        })
+
+        return ident + "Shape: " + layer.name + "\n" + tt.join("") + "\n"
+      }
+
+      case "group": {
+        var compo = ""
+        if (isComponent(layer)) {
+          return showit(context, layer)
+        }
+
+        let tt = layer.layers.map((layer) => {
+          return show(context, num + 1, layer)
+        })
+
+        return ident + "Group: " + layer.name + " " + compo + "\n" + tt.join("") + "\n"
+      }
+    }
+
+
+    return "Default" + layer.type
+  }
+}
 
 function isIcon(layer: Layer): boolean {
   return (layer.assets.length > 0) && ((layer.componentName ?? "").length > 0)
@@ -37,6 +163,9 @@ function isSecondaryButton(layer: Layer): boolean {
 function iconName(name: string): string {
   return name.replaceAll("/", "_").toLowerCase()
 }
+
+
+
 function layer(context: Context, layer: Layer): string | CodeObject {
 
 
@@ -51,7 +180,7 @@ function layer(context: Context, layer: Layer): string | CodeObject {
     // return layer.layers.length.toString()
   }
 
-  let shape = isPrimaryButton(layer) + printLayer(layer)//layer.componentName+"SHAPE \n"+handleShape(context, layer)
+  let shape =  printLayer(layer)//layer.componentName+"SHAPE \n"+handleShape(context, layer)
   return new CodeObject(shape, "kotlin")
 
 
@@ -125,7 +254,9 @@ function printLayer(layer: Layer): string {
   code11 = code11 + "parentType :" + layer.parent.type + "\n"
   code11 = code11 + "parent is Button :" + isPrimaryButton(layer.parent) + "\n"
   code11 = code11 + "parent is Sec Button :" + isSecondaryButton(layer.parent) + "\n"
-
+  code11 = code11 + "textStyles :\n" + layer.textStyles.map((shadow) => {
+    return printTextStyleObject(shadow)
+  }) + "\n"
   code11 = code11 + "rotation :" + layer.rotation + "\n"
   code11 = code11 + "Shadows :\n" + layer.shadows.map((shadow) => {
     return printShadow(shadow)
@@ -145,6 +276,23 @@ function printLayer(layer: Layer): string {
   code11 = code11 + layer.layers.map((item) => {
     return "Layer:" + printLayer(item)
   })
+
+
+  return code11
+}
+
+function printTextStyleObject(textStyle:TextStyleObject):string{
+
+  var code11 = "TextStyleObject"
+  code11 = code11 + "texttstyle :" + printTextStyle(textStyle.textStyle)
+
+  return code11
+}
+
+function printTextStyle(textStyle:TextStyle):string{
+  var code11 = "Textstyle"
+  code11 = code11 + "fontFamily :" + textStyle.fontFamily + "\n"
+  code11 = code11 + "fontSize :" + textStyle.fontSize.toString() + "\n"
 
 
   return code11
@@ -324,7 +472,7 @@ function textStyles(project: Project): CodeObject {
 function screen(context: Context, selectedVersion: Version, selectedScreen: Screen) {
 
   var tt = selectedVersion.layers.map((layer) => {
-    return show(0,layer)
+    return show(context, 0, layer)
   })
 
   return new CodeObject(
@@ -332,78 +480,19 @@ function screen(context: Context, selectedVersion: Version, selectedScreen: Scre
     "kotlin")
 }
 
-function ee(num:number):string{
+function ee(num: number): string {
   var text = ""
   for (var _i = 0; _i < num; _i++) {
-      text = text + " "
+    text = text + " "
   }
 
   return text
 }
 
-function show(num:number,layer: Layer): string {
-
-  var ident = ee(num)
-
-  if (layer.layers.length == 0) {
-
-    switch (layer.type) {
-      case "text": {
-
-        var textValue = "Text (\"" + layer.content + "\")"
-
-        if (layer.parent.type == "group" && layer.parent.name == "but_primary") {
-          return ident+"Button(" + textValue + ")" + "\n\n"
-        } else if (layer.parent.type == "group" && layer.parent.name == "but_secondary") {
-          return ident+"ButtonSec(" + textValue + ")" + "\n\n"
-        }
-        else {
-          return ident+ textValue + "\n\n"
-        }
-
-        return ""
-
-      }
-      case "shape": {
-
-        return ident+ layer.type + " "+ layer.name +  "\n"
-
-      }
-      case "group": {
-
-        return ident+ layer.type  + "\n"
-
-      }
-
-    }
-    return "DEF" + layer.type
-  } else {
 
 
-    switch (layer.type) {
-      case "shape": {
-        let tt = layer.layers.map((layer) => {
-          return show(0,layer)
-        })
-
-        return ident+"Shape: " + layer.name + "\n" + tt.join("") + "\n"
-      }
-
-      case "group": {
-        let tt = layer.layers.map((layer) => {
-          return show(num+1,layer)
-        })
-
-        return ident+"Group: " + layer.name + "\n" + tt.join("") + "\n"
-      }
-    }
-
-
-    return "Default" + layer.type
-  }
-
-
-
+function isComponent(layer: Layer): boolean {
+  return ((layer.componentName ?? "").length > 0) && (layer.assets.length > 0)
 }
 
 function cleanNameForAndroid(name: string): string {
