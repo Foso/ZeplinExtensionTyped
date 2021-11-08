@@ -1,0 +1,11 @@
+{
+  "packageName": "hello-layer",
+  "name": "Hello Layer",
+  "description": "",
+  "version": "0.1.0",
+  "platforms": [
+    "android"
+  ],
+  "moduleURL": "./main.js",
+  "readmeURL": "./README.md"
+}

@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/ZeplinComposeExt.iml" filepath="$PROJECT_DIR$/.idea/ZeplinComposeExt.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/ZeplinExtensionTyped.iml" filepath="$PROJECT_DIR$/.idea/ZeplinExtensionTyped.iml" />
     </modules>
   </component>
 </project>

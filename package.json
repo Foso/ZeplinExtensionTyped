@@ -12,31 +12,9 @@
     "publish": "zem publish"
   },
   "zeplin": {
-    "displayName": "My Extension",
+    "displayName": "Hello Layer",
     "platforms": [
       "android"
-    ],
-    "options": [
-      {
-        "name": "Text style line height attribute",
-        "type": "picker",
-        "id": "lineHeightAttribute",
-        "default": "lineHeight",
-        "options": [
-          {
-            "name": "lineHeight",
-            "value": "lineHeight"
-          },
-          {
-            "name": "lineSpacingExtra",
-            "value": "lineSpacingExtra"
-          },
-          {
-            "name": "lineSpacingMultiplier",
-            "value": "lineSpacingMultiplier"
-          }
-        ]
-      }
     ]
   },
   "dependencies": {

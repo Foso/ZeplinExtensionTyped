@@ -1,5 +1,10 @@
 export default class Screen { 
-    name: String
-    description: String
-    tags: Array<String>
+    /** Name of the screen. */
+    name: string
+
+    /** Description of the screen. */
+    description: string
+
+    /** Tags of the screen. */
+    tags: Array<string>
 }

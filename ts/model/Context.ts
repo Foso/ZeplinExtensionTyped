@@ -1,10 +1,15 @@
-import  Project  from "./Project";
+import Project from "./Project";
 import Styleguide from "./Styleguide";
 
-export default class Context { 
+export default class Context {
+    /** Project that the extension is running in. */
     project: Project | null
-    styleguide : Styleguide| null
-    getOption(name) : Number | Boolean | String{
+
+    /** Styleguide that the extension is running in. */
+    styleguide: Styleguide | null
+
+    /** Value of the option with id. */
+    getOption(name): Number | Boolean | String {
         return ""
     }
 }

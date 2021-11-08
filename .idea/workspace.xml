@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="5f5109f0-ccf5-47f6-b78a-26449f66b9b1" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/ZeplinExtensionTyped.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/manifest.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ts/fixtures/componentVariants.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ts/fixtures/components.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ts/fixtures/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ts/fixtures/project.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ts/fixtures/screens.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ts/fixtures/version.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ts/index.test.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ts/model/Component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ts/model/ComponentProperty.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ts/model/ComponentPropertyDescriptor.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ts/model/ComponentVariant.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ts/model/RemPreferences.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ts/model/SpacingSection.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ts/model/SpacingToken.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/ZeplinComposeExt.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DebugPrint.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fixtures/componentVariants.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fixtures/components.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fixtures/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fixtures/project.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fixtures/screens.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fixtures/version.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Alignmen.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Asset.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Blur.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Border.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/CodeExportObject.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/CodeObject.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Color copy.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Color.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/ColorStop.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Context.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Direction.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Fill.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Gradient.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Grid.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/HexColor.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Horizontal.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Image.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Layer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Layout.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Padding.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Project.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Rect.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Screen.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Shadow.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Styleguide.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/TextStyle.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/TextStyleObject.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Version.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ts/DebugPrint.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ts/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ts/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ts/model/Blur.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ts/model/Blur.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ts/model/Border.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ts/model/Border.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ts/model/Color.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ts/model/Color.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ts/model/ColorStop.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ts/model/ColorStop.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ts/model/Context.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ts/model/Context.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ts/model/Fill.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ts/model/Fill.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ts/model/Layer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ts/model/Layer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ts/model/Layout.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ts/model/Layout.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ts/model/Project.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ts/model/Project.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ts/model/Screen.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ts/model/Screen.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ts/model/Shadow.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ts/model/Shadow.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ts/model/Styleguide.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ts/model/Styleguide.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ts/model/TextStyle.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ts/model/TextStyle.ts" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="20eTzBpQwMdMSwh19WaayRQ4iFB" />
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="dart.analysis.tool.window.visible" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="show.migrate.to.gradle.popup" value="false" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5f5109f0-ccf5-47f6-b78a-26449f66b9b1" name="Changes" comment="" />
+      <created>1636404314890</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1636404314890</updated>
+    </task>
+    <servers />
+  </component>
+</project>
